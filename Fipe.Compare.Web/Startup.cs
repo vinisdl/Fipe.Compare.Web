@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Fipe.Compare.Context;
 using Fipe.Compare.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SimpleInjector;
@@ -27,6 +29,8 @@ namespace Fipe.Compare.Web
         {
             services.AddMvc();
             Bootstrapper.IntegrateSimpleInjector(services, _container);
+            var connectionString = Configuration.GetConnectionString("FipeCompareContext");
+            services.AddEntityFrameworkNpgsql().AddDbContext<FipeCompareContext>(op => op.UseNpgsql(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

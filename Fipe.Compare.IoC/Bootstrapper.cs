@@ -40,7 +40,7 @@ namespace Fipe.Compare.IoC
 
             // Add application services. For instance:
             //_container.Register<IUserService, UserService>(Lifestyle.Scoped);
-            container.Register<TestIOC, Class1>(Lifestyle.Scoped);
+            //container.Register<TestIOC, Class1>(Lifestyle.Scoped);
             // Cross-wire ASP.NET services (if any). For instance:
             container.CrossWire<ILoggerFactory>(app);
 

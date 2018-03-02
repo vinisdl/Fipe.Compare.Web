@@ -61,3 +61,35 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+# Minified JavaScript and CSS
+- (\.|-)min\.(js|css)$
+
+# Stylesheets imported from packages
+- ([^\s]*)import\.(css|less|scss|styl)$
+
+# Bootstrap css and js
+- (^|/)bootstrap([^.]*)\.(js|css|less|scss|styl)$
+- (^|/)custom\.bootstrap([^\s]*)(js|css|less|scss|styl)$
+
+# Font Awesome
+- (^|/)font-awesome\.(css|less|scss|styl)$
+- (^|/)font-awesome/.*\.(css|less|scss|styl)$
+
+# Foundation css
+- (^|/)foundation\.(css|less|scss|styl)$
+
+# Normalize.css
+- (^|/)normalize\.(css|less|scss|styl)$
+
+# Skeleton.css
+- (^|/)skeleton\.(css|less|scss|styl)$
+
+# Bourbon css
+- (^|/)[Bb]ourbon/.*\.(css|less|scss|styl)$
+
+# Animate.css
+- (^|/)animate\.(css|less|scss|styl)$
+
+# Materialize.css
+- (^|/)materialize\.(css|less|scss|styl|js)$
